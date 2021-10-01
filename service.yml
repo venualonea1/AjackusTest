@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: reactcalcapp
+  namespace: reactap
+spec:
+  selector:
+    app: reactcalcapp 
+  ports:
+    - port: 3000
+      targetPort: 3000
+  type: LoadBalancer
+  
+ 
+

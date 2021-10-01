@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reactcalcapp
+  namespace: reactapp
+spec:
+  selector:
+    matchLabels:
+      app: reactcalcapp
+  template:
+    metadata:
+      labels:
+        app: reaccalcapp
+    spec:
+      containers:
+        - name: reactcalcapp
+          image: venubharadwaj/reactapps:0.1
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "400m"
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+          ports:
+          - containerPort: 300        
+      imagePullSecrets:
+        - name: dockerconfig
